@@ -1,0 +1,61 @@
+* { box-sizing: border-box; font-family: Arial, sans-serif; margin: 0; padding: 0; }
+
+body {
+  background: #f4f6f9;
+}
+
+.login-wrapper {
+  display: flex;
+  width: 900px;
+  margin: 60px auto;
+}
+
+.login-card {
+  width: 500px;
+  padding: 40px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.banner {
+  width: 500px;
+  background: #2d3e50;
+  color: #fff;
+  padding: 40px;
+}
+
+.title {
+  position: absolute;
+  top: 40px;
+  font-size: 24px;
+}
+
+.subtitle {
+  margin-top: 10px;
+  color: #777;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.error-msg {
+  color: red;
+  font-size: 12px;
+  display: none;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: #2d3e50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
