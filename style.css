@@ -5,20 +5,25 @@ body {
 }
 
 .login-wrapper {
+  position: relative;
+  /* added position: relative so that .title(absolute) anchors here not the whole page */
   display: flex;
-  width: 900px;
+  max-width: 900px;
+  /* used max-width instead of fixed width, so it can shrink on smaller screens too */
   margin: 60px auto;
 }
 
 .login-card {
-  width: 500px;
+  flex: 1 1 400px;
+  /* used flex instead of fixed width 500px, so it fits properly */
   padding: 40px;
   background: #fff;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .banner {
-  width: 500px;
+  flex: 1 1 400px;
+  /* used flex instead of fixed width 500px, so it fits properly */
   background: #2d3e50;
   color: #fff;
   padding: 40px;
