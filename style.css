@@ -19,13 +19,6 @@ body {
   padding: 40px;
   background: #fff;
 }
-.banner {
-  flex: 1 1 450px;                /* FIXED: same change as login-card, so both boxes are equal size
-                                    and now actually fit inside login-wrapper */
-  background: #2d3e50;
-  color: #fff;
-  padding: 40px;
-}
 .title {
   position: relative;             /* FIXED: before this was "position: absolute" with no positioned
                                     parent, so the heading floated outside the box completely, to
