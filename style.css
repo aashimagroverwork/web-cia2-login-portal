@@ -59,6 +59,7 @@ body {
   border: none;
   cursor: pointer;
 }
+
 /* NEW: responsive breakpoints so the layout stacks nicely on small screens
    instead of squishing everything sideways */
 @media (max-width: 600px) {
@@ -69,4 +70,23 @@ body {
   .banner {
     padding: 25px;
   }
+}
+
+
+/* css for signup.html*/
+
+
+.status-success {
+  color: #2e7d32;
+}
+
+.status-error {
+  color: #c0392b;
+}
+
+.back-link {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 20px;
 }
