@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $('#login-form').submit(function (e) {
     /*page was reloading on submit, so nothing ever showed*/
-    e.preventDefault();
+    preventDefault();
 
     var email = $('#email').val();
     var password = $('#password').val();

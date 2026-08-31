@@ -19,7 +19,7 @@ body {
 }
 
 .login-card {
-  /* shares space with the banner instead of a fixed width */
+  /* flexes to fill the wrapper  */
   flex: 1 1 450px;
   /* anchor point for .title below */
   position: relative;
