@@ -1,6 +1,6 @@
 $(document).ready(function () {
   $('#login-form').submit(function (e) {
-    /*page was reloading on submit, so nothing ever showed*/
+    /*when validation fails; let valid submissions go through normally.*/
     preventDefault();
 
     var email = $('#email').val();
