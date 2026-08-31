@@ -1,16 +1,20 @@
 * { box-sizing: border-box; font-family: Arial, sans-serif; margin: 0; padding: 0; }
 body {
   background: #f4f6f9;
+  /*this is added to keep login box in center*/
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .login-wrapper {
-  display: flex;                /* with display as flex, the box can now shrink if the screen is small,
-                                    instead of overflowing off the edge */
-  flex-wrap: wrap;               /* lets the two boxes stack on top of each other on small screens */
+  display: flex;                /* lets the box shrink instead of overflowing on small screens */
+  flex-wrap: wrap;               /* not really needed anymore since there's only one box now,
+                                    but kept in case a second box (like the banner) comes back */
   width: 100%;
-  max-width: 900px;              /* FIXED: before this was a fixed "width: 900px" while the two boxes
-                                    inside added up to 1000px, so it didn't fit. max-width lets it
-                                    shrink safely instead of overflowing */
-  margin: 60px auto;
+  max-width: 900px;              /* keeps the box from getting too wide on large screens */
+  margin: 20px;                  /* just a small gap from the screen edges;
+                                    actual centering is now handled by the body's flexbox */
 }
 .login-card {
   flex: 1 1 450px;                /* FIXED: before this was a fixed "width: 500px". Now it just takes
