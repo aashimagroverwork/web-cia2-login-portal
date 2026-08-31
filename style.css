@@ -1,47 +1,76 @@
 * { box-sizing: border-box; font-family: Arial, sans-serif; margin: 0; padding: 0; }
 body {
-  background: #f4f6f9;
-  /*this is added to keep login box in center*/
+  background: #ebf0f5;
   min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 .login-wrapper {
-  display: flex;                /* lets the box shrink instead of overflowing on small screens */
-  flex-wrap: wrap;               /* not really needed anymore since there's only one box now,
-                                    but kept in case a second box (like the banner) comes back */
+  display: flex;               /* with display as flex, the box can now shrink if the screen is small,
+                                    instead of overflowing off the edge */
+  flex-wrap: wrap;              /* lets the two boxes stack on top of each other on small screens */
   width: 100%;
-  max-width: 900px;              /* keeps the box from getting too wide on large screens */
-  margin: 20px;                  /* just a small gap from the screen edges;
-                                    actual centering is now handled by the body's flexbox */
+  max-width: 900px;             /* FIXED: before this was a fixed "width: 900px" while the two boxes
+                                    inside added up to 1000px, so it didn't fit. max-width lets it
+                                    shrink safely instead of overflowing */
+  margin: 60px auto;
+  justify-content: center;      /* centers the single card inside the wrapper */
 }
 .login-card {
-  flex: 1 1 450px;                /* FIXED: before this was a fixed "width: 500px". Now it just takes
-                                    up equal space with the banner box next to it */
-  position: relative;             /* needed so the heading below stays inside this box */
+  flex: 1 1 420px;              /* controls card sizing so it matches the image aspect ratio */
+  position: relative;            /* needed so the heading below stays inside this box */
   padding: 40px;
-  background: #fff;
+  background: #faf6f0;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+.banner {
+  flex: 1 1 450px;               /* FIXED: same change as login-card, so both boxes are equal size
+                                   and now actually fit inside login-wrapper */
+  background: #2d3e50;
+  color: #fff;
+  padding: 40px;
 }
 .title {
-  position: relative;             /* FIXED: before this was "position: absolute" with no positioned
-                                    parent, so the heading floated outside the box completely, to
-                                    the top of the whole page */
-  font-size: 24px;
+  position: relative;            /* FIXED: before this was "position: absolute" with no positioned
+                                   parent, so the heading floated outside the box completely, to
+                                   the top of the whole page */
+  font-family: Georgia, serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1c2b36;
   /* we removed "top: 40px" that was here before -- it was pushing the heading
      down and making it overlap the subtitle text below it */
 }
 .subtitle {
-  margin-top: 10px;
-  color: #777;
+  margin-top: 6px;
+  margin-bottom: 24px;
+  color: #7b8895;
+  font-size: 14px;
 }
 .form-group {
   margin-bottom: 20px;
 }
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1c2b36;
+  margin-bottom: 8px;
+}
 .form-group input {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
+  padding: 12px 14px;
+  border: 1px solid #e2e6ea;
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 14px;
+  outline: none;
+  color: #333;
+}
+.form-group input::placeholder {
+  color: #a0abac;
 }
 .error-msg {
   color: red;
@@ -50,16 +79,28 @@ body {
 }
 .submit-btn {
   width: 100%;
-  padding: 12px;
-  background: #2d3e50;
-  color: #fff;
+  padding: 14px;
+  background: #ea9e3e;
+  color: #1c2b36;
   border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
   cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s ease;
+}
+.submit-btn:hover {
+  background: #d98d2d;
 }
 /* NEW: responsive breakpoints so the layout stacks nicely on small screens
    instead of squishing everything sideways */
 @media (max-width: 600px) {
   .login-wrapper {
     margin: 0;
+  }
+  .login-card,
+  .banner {
+    padding: 25px;
   }
 }
