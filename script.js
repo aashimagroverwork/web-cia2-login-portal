@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $('#login-form').submit(function (e) {
     /*when validation fails; let valid submissions go through normally.*/
-    preventDefault();
+    e.preventDefault();
 
     var email = $('#email').val();
     var password = $('#password').val();
