@@ -65,8 +65,4 @@ body {
   .login-wrapper {
     margin: 0;
   }
-  .login-card,
-  .banner {
-    padding: 25px;
-  }
 }

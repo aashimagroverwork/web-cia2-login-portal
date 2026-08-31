@@ -1,12 +1,10 @@
 <?php
-// signup.php - runs when the form is submitted
-
 include "config.php";
 
-$email = $_POST["email"];
-$password = $_POST["password"];
+$email = trim($_POST["email"] ?? "");
+$password = $_POST["password"] ?? "";
 
-if ($email == "" || $password == "") {
+if ($email === "" || $password === "") {
     echo "Email and password are required. <a href='index.html'>Go back</a>";
     exit;
 }
@@ -16,24 +14,26 @@ if (strlen($password) < 6) {
     exit;
 }
 
-// check if email already exists
-$check = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email'");
+$stmt = mysqli_prepare($conn, "SELECT id FROM users WHERE email = ?");
+mysqli_stmt_bind_param($stmt, "s", $email);
+mysqli_stmt_execute($stmt);
+mysqli_stmt_store_result($stmt);
 
-if (mysqli_num_rows($check) > 0) {
+if (mysqli_stmt_num_rows($stmt) > 0) {
     echo "That email is already registered. <a href='index.html'>Go back</a>";
     exit;
 }
+mysqli_stmt_close($stmt);
 
-// hash the password before storing it
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-// insert the new user
-$sql = "INSERT INTO users (email, password_hash) VALUES ('$email', '$hashedPassword')";
-$result = mysqli_query($conn, $sql);
+$stmt = mysqli_prepare($conn, "INSERT INTO users (email, password_hash) VALUES (?, ?)");
+mysqli_stmt_bind_param($stmt, "ss", $email, $hashedPassword);
 
-if ($result) {
-    echo "Account created successfully! <a href='index.html'>Go back</a>";
+if (mysqli_stmt_execute($stmt)) {
+    header("Location: result.html");
+    exit;
 } else {
-    echo "Something went wrong: " . mysqli_error($conn);
+    echo "Something went wrong. Please try again. <a href='index.html'>Go back</a>";
 }
 ?>

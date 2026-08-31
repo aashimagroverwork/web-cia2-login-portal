@@ -1,0 +1,45 @@
+body {
+  background: #f4f6f9;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.result-card {
+  background: #fff;
+  width: 300px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid #ccc;
+}
+
+.status-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  background: #e6f4ee;
+  color: #2f8f6a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 20px;
+  color: #2d3e50;
+}
+
+.detail {
+  color: #777;
+  font-size: 14px;
+  margin: 10px 0 20px;
+}
+
+.back-link {
+  display: block;
+  padding: 10px;
+  background: #2d3e50;
+  color: #fff;
+  text-decoration: none;
+}

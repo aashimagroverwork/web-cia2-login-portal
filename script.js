@@ -20,6 +20,7 @@ $(document).ready(function () {
 
     if (isValid) {
       $('#status-box').text('Form validated successfully.');
+      this.submit();
     }
   });
 });
