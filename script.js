@@ -1,21 +1,19 @@
 $(document).ready(function () {
-  /* '-' was missing */
   $('#login-form').submit(function (e) {
-
-  /* prevents the form from refreshing so that we are able to see the validation messages */
-  e.preventDefault();
+    /*page was reloading on submit, so nothing ever showed*/
+    e.preventDefault();
 
     var email = $('#email').val();
     var password = $('#password').val();
     var isValid = true;
 
     if (email == '') {
-      /* 'error' spelling is wrong so the message would never display */
+      /*email-error was wrongly written as email-eror */
       $('#email-error').show().text('Email is required');
       isValid = false;
     }
-    /* the error message says atleast six characters so length should be less than 6 not 5 */
     if (password.length < 6) {
+      /* matches the message (min 6 chars) was previously 5 */
       $('#password-error').show().text('Password must be at least 6 characters');
       isValid = false;
     }
