@@ -93,14 +93,10 @@ body {
 .submit-btn:hover {
   background: #d98d2d;
 }
-/* NEW: responsive breakpoints so the layout stacks nicely on small screens
+/* feature responsive breakpoints so the layout stacks nicely on small screens
    instead of squishing everything sideways */
 @media (max-width: 600px) {
   .login-wrapper {
     margin: 0;
-  }
-  .login-card,
-  .banner {
-    padding: 25px;
   }
 }
