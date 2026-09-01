@@ -30,7 +30,8 @@ $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 $insertQuery = "INSERT INTO users (email, password_hash) VALUES ('$email', '$hashedPassword')";
 
 if (mysqli_query($conn, $insertQuery)) {
-    echo "Signup successful! <a href='result.html'>Continue</a>";
+    header("Location: result.html");
+    exit;
 } else {
     echo "Something went wrong. Please try again. <a href='index.html'>Go back</a>";
 }
