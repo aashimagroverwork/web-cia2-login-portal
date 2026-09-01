@@ -11,7 +11,7 @@ body {
                                     instead of overflowing off the edge */
   flex-wrap: wrap;              /* lets the two boxes stack on top of each other on small screens */
   width: 100%;
-  max-width: 900px;             /* FIXED: before this was a fixed "width: 900px" while the two boxes
+  max-width: 900px;             /*  before this was a fixed "width: 900px" while the two boxes
                                     inside added up to 1000px, so it didn't fit. max-width lets it
                                     shrink safely instead of overflowing */
   margin: 60px auto;
@@ -26,14 +26,14 @@ body {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 .banner {
-  flex: 1 1 450px;               /* FIXED: same change as login-card, so both boxes are equal size
+  flex: 1 1 450px;               /*  same change as login-card, so both boxes are equal size
                                    and now actually fit inside login-wrapper */
   background: #2d3e50;
   color: #fff;
   padding: 40px;
 }
 .title {
-  position: relative;            /* FIXED: before this was "position: absolute" with no positioned
+  position: relative;            /*  before this was "position: absolute" with no positioned
                                    parent, so the heading floated outside the box completely, to
                                    the top of the whole page */
   font-family: Georgia, serif;
